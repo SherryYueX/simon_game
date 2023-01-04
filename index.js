@@ -17,6 +17,14 @@ $(document).keypress(function(eve) {
   }
 });
 
+$("h1").dblclick(function(eve) {
+  if(!is_game_started){
+    $("#level-title").text("Level " + array.length);
+    is_game_started = true;
+    showNext(next, audio_srcs[next]);
+  }
+});
+
 var error = new Audio("sounds/gong.mp3");
 
 $(".btn").mousedown(function(){
